@@ -1,4 +1,4 @@
 #!/bin/bash
-cd /home/ec2-user/drugcartjuly1
+cd /home/ec2-user/myapp
 npm install
 npm run build
