@@ -1,6 +1,5 @@
 import TopCategoryClient from "@/components/home/TopCategoryClient"; // Client component
 import { getCategoryData } from "@/services/home/categoryService";
-import Slider from "@/components/layout/Slider";
 import { GetProductTypeService } from "@/services/home/productService";
 import { GetSendFeedbackService } from "@/services/home/feedbackService";
 import { getBlogData } from "@/services/home/blogService";
@@ -110,7 +109,6 @@ export default async function Home() {
 
   return (
     <main className="max-w-7xl mx-auto p-2">
-      <Slider />
       <section className="mt-4">
         <div className="p-2 bg-gray-100 font-bold mb-4">
           <h1>Shop of Categories</h1>
