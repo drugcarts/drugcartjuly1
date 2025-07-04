@@ -1,10 +1,9 @@
 import TopCategoryClient from "@/components/home/TopCategoryClient"; // Client component
 import { getCategoryData } from "@/services/home/categoryService";
-import { getMainSliderData } from "@/services/home/mainSliderService";
+import Slider from "@/components/layout/Slider";
 import { GetProductTypeService } from "@/services/home/productService";
 import { GetSendFeedbackService } from "@/services/home/feedbackService";
 import { getBlogData } from "@/services/home/blogService";
-import SliderClient from "@/components/home/SliderClient";
 import TrandingProduct from "@/components/home/trandingProduct";
 import BannerGroup from "@/components/home/BannerGroup";
 import ServiceGroup from "@/components/home/ServiceGroup";
@@ -103,18 +102,15 @@ export default async function Home() {
 
   const data = await getCategoryData(search, page, showNo); // Call API from your service
   const blogData = await getBlogData(1, 3); // Call API from your service
-  // const mainSliderUrl = await getMainSliderData("medicine");
 
   const feedbackData = await GetSendFeedbackService(page, 4, search);
 
   const type = "Popular";
   const productData = await GetProductTypeService(page, showNo, type, search);
 
-  console.log(feedbackData?.send_feedbacks, "FFEDD");
-
   return (
     <main className="max-w-7xl mx-auto p-2">
-      {/* <SliderClient slides={mainSliderUrl} /> */}
+      <Slider />
       <section className="mt-4">
         <div className="p-2 bg-gray-100 font-bold mb-4">
           <h1>Shop of Categories</h1>

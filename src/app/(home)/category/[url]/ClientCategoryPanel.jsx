@@ -5,7 +5,7 @@ import { useParams, usePathname } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { IMAGES } from "@/components/common/images";
-// import { GetMainSliderUrlService } from "@/services/mainSliderService";
+import { GetMainSliderUrlService } from "@/services/mainSliderService";
 import ProductCard from "@/components/productinfo/ProductCard";
 import Helpful from "@/components/productinfo/Helpful";
 import OtcProduct from "@/components/productinfo/OtcProduct";
@@ -14,20 +14,20 @@ import LeftHealthDevice from "@/components/home/leftsection/LeftHealthDevice";
 import FilterCompanyCard from "@/components/productinfo/FilterCompanyCard";
 
 const ClientCategoryPanel = ({ productData }) => {
-  // const { mainSliderUrl } = useSelector((state) => state.mainSliderData);
+  const { mainSliderUrl } = useSelector((state) => state.mainSliderData);
   const dispatch = useDispatch();
   const pathname = usePathname();
   let pathSegments = pathname.split("/").filter(Boolean);
   pathSegments = pathSegments.map((segment) => segment.replace(/-/g, " "));
   const params = useParams();
 
-  // useEffect(() => {
-  //   dispatch(GetMainSliderUrlService(params?.url));
-  // }, [params.url]);
+  useEffect(() => {
+    dispatch(GetMainSliderUrlService(params?.url));
+  }, [params.url]);
 
   return (
     <section className="max-w-7xl mx-auto mt-3">
-      {/* <Image
+      <Image
         priority
         src={
           mainSliderUrl?.[0]?.slide_image
@@ -38,7 +38,7 @@ const ClientCategoryPanel = ({ productData }) => {
         className="w-[100%] h-[300px] rounded-xl"
         width={500}
         height={100}
-      /> */}
+      />
       <div className="flex py-2">
         <div className="w-[20%] m-3 max-h-auto hidden md:block">
           <h2 className="text-lg text-center uppercase py-3 font-bold border-b-[1.5px] bg-[#35A24D] text-white">
