@@ -5,7 +5,7 @@ import { useParams, usePathname } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { IMAGES } from "@/components/common/images";
-import { GetMainSliderUrlService } from "@/services/mainSliderService";
+// import { GetMainSliderUrlService } from "@/services/mainSliderService";
 import ProductCard from "@/components/productinfo/ProductCard";
 import Helpful from "@/components/productinfo/Helpful";
 import OtcProduct from "@/components/productinfo/OtcProduct";
@@ -14,16 +14,16 @@ import LeftHealthDevice from "@/components/home/leftsection/LeftHealthDevice";
 import FilterCompanyCard from "@/components/productinfo/FilterCompanyCard";
 
 const ClientCategoryPanel = ({ productData }) => {
-  const { mainSliderUrl } = useSelector((state) => state.mainSliderData);
+  // const { mainSliderUrl } = useSelector((state) => state.mainSliderData);
   const dispatch = useDispatch();
   const pathname = usePathname();
   let pathSegments = pathname.split("/").filter(Boolean);
   pathSegments = pathSegments.map((segment) => segment.replace(/-/g, " "));
   const params = useParams();
 
-  useEffect(() => {
-    dispatch(GetMainSliderUrlService(params?.url));
-  }, [params.url]);
+  // useEffect(() => {
+  //   dispatch(GetMainSliderUrlService(params?.url));
+  // }, [params.url]);
 
   return (
     <section className="max-w-7xl mx-auto mt-3">
