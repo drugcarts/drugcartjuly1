@@ -103,7 +103,7 @@ export default async function Home() {
 
   const data = await getCategoryData(search, page, showNo); // Call API from your service
   const blogData = await getBlogData(1, 3); // Call API from your service
-  const mainSliderUrl = await getMainSliderData("medicine");
+  // const mainSliderUrl = await getMainSliderData("medicine");
 
   const feedbackData = await GetSendFeedbackService(page, 4, search);
 
@@ -114,7 +114,7 @@ export default async function Home() {
 
   return (
     <main className="max-w-7xl mx-auto p-2">
-      <SliderClient slides={mainSliderUrl} />
+      {/* <SliderClient slides={mainSliderUrl} /> */}
       <section className="mt-4">
         <div className="p-2 bg-gray-100 font-bold mb-4">
           <h1>Shop of Categories</h1>

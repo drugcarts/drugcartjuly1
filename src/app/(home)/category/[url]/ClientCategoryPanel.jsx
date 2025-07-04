@@ -22,12 +22,12 @@ const ClientCategoryPanel = ({ productData }) => {
   const params = useParams();
 
   useEffect(() => {
-    dispatch(GetMainSliderUrlService(params.url));
+    dispatch(GetMainSliderUrlService(params?.url));
   }, [params.url]);
 
   return (
     <section className="max-w-7xl mx-auto mt-3">
-      <Image
+      {/* <Image
         priority
         src={
           mainSliderUrl?.[0]?.slide_image
@@ -38,7 +38,7 @@ const ClientCategoryPanel = ({ productData }) => {
         className="w-[100%] h-[300px] rounded-xl"
         width={500}
         height={100}
-      />
+      /> */}
       <div className="flex py-2">
         <div className="w-[20%] m-3 max-h-auto hidden md:block">
           <h2 className="text-lg text-center uppercase py-3 font-bold border-b-[1.5px] bg-[#35A24D] text-white">
